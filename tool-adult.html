@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="/images/favicon.png" type="">
+
+  <title> Exstudio </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/css/responsive.css" rel="stylesheet" />
+  <!-- file-upload.css-->
+  <link rel="stylesheet" href="/css/file-upload.css">
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="/images/hero-bg.png" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <div id="header"></div>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Our <span>Tools </span>: 부적절 이미지 판별기
+          </h2>
+          <p>
+            너와 내가 만들어 가는 메타버스, 상상 속 세상으로
+          </p>
+        </div>
+        <div class="row">
+<!--          툴 설명-->
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="/images/s1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  부적절 이미지 필터링 툴이란?
+                </h5>
+                <p>
+                  코스튬 제작에 사용되는 텍스처 이미지 내의 부적절한 이미지 콘텐츠를 식별하고, 필터링합니다.<br>
+                </p>
+                <p style="text-align: left">
+                  - 부적절한 이미지 콘텐츠 검출<br>
+                  - 음란물 판별 가능<br>
+                  - 이미지의 성인물 및 선정적 콘텐츠 가능성 판별<br>
+                  - 신뢰도 점수를 0 ~ 1 사이의 값으로 제공<br>
+                  - 값이 클수록 부적절 가능성이 높다는 것을 의미<br>
+                </p>
+                </a>
+              </div>
+            </div>
+          </div>
+<!--          입력 이미지-->
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="/images/s3.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  판별할 입력 이미지
+                </h5>
+                <p>
+                  이미지를 입력하면 부적절성 여부를 판별합니다.<br>
+                </p>
+                <!-- 이미지 업로드 폼 추가 -->
+                <!-- 이미지 업로드 폼 -->
+                <form action="/analyze-image" method="post" enctype="multipart/form-data">
+                  <input type="file" name="image" accept="image/*" required onchange="previewImage(event)"><br>
+                  <!-- 이미지 미리보기를 위한 div -->
+                  <div id="imagePreview" style="margin-top: 16px;"></div><br>
+                  <button type="submit" class="btn btn-primary" style="float: left;">판별 요청</button>
+                </form>
+
+                <script src="/js/imagePreview.js"></script>
+
+
+              </div>
+            </div>
+          </div>
+<!--          출력 결과-->
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="/images/s2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  AI가 판별하는 출력 결과
+                </h5>
+                <p>
+                  판별 결과 점수를 제공합니다.<br>
+                </p>
+                <p style="text-align: left">
+                  - 성인물 가능성 Adult 점수: <span id="adultScore">0</span><br>
+                  - 이미지 선정성 Racy 점수: <span id="racyScore">0</span><br>
+                </p>
+                <!-- analyzeImage.js 스크립트 태그 추가 -->
+                <script src="/js/analyzeImage.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+<!--  &lt;!&ndash; info section &ndash;&gt;-->
+<!--  <div id="info"></div>-->
+<!--  &lt;!&ndash; end info section &ndash;&gt;-->
+  <!-- footer section -->
+  <div id="footer"></div>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="/js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+  <!-- header section  -->
+  <script>
+    $("#header").load("header.html");
+  </script>
+  <!-- End header section  -->
+  <!-- info section  -->
+  <script>
+    $("#info").load("info.html");
+  </script>
+  <!-- End footer section  -->
+  <script>
+    $("#footer").load("footer.html");
+  </script>
+  <!-- End footer section  -->
+</body>
+
+</html>
